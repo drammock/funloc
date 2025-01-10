@@ -1,0 +1,108 @@
+.
+├── dataset_description.json
+├── derivatives
+│   └── freesurfer
+│       └── subjects
+│           ├── sub01
+│           │   ├── bem
+│           │   │   ├── sub01-5120-5120-5120-bem.fif
+│           │   │   ├── sub01-5120-5120-5120-bem-sol.fif
+│           │   │   ├── sub01-head.fif
+│           │   │   └── sub01-oct-6-src.fif
+│           │   ├── label
+│           │   │   ├── lh.aparc.a2009s.annot
+│           │   │   ├── lh.aparc.annot
+│           │   │   ├── rh.aparc.a2009s.annot
+│           │   │   └── rh.aparc.annot
+│           │   ├── mri
+│           │   │   └── T1.mgz
+│           │   └── surf
+│           │       ├── lh.curv
+│           │       ├── lh.inflated
+│           │       ├── lh.orig
+│           │       ├── lh.pial
+│           │       ├── lh.sphere
+│           │       ├── lh.sphere.reg
+│           │       ├── lh.white
+│           │       ├── rh.curv
+│           │       ├── rh.inflated
+│           │       ├── rh.orig
+│           │       ├── rh.pial
+│           │       ├── rh.sphere
+│           │       ├── rh.sphere.reg
+│           │       └── rh.white
+│           └── sub02
+│               ├── bem
+│               │   ├── sub02-5120-5120-5120-bem.fif
+│               │   ├── sub02-5120-5120-5120-bem-sol.fif
+│               │   ├── sub02-head.fif
+│               │   └── sub02-oct-6-src.fif
+│               ├── label
+│               │   ├── lh.aparc.a2009s.annot
+│               │   ├── lh.aparc.annot
+│               │   ├── rh.aparc.a2009s.annot
+│               │   └── rh.aparc.annot
+│               ├── mri
+│               │   └── T1.mgz
+│               └── surf
+│                   ├── lh.curv
+│                   ├── lh.inflated
+│                   ├── lh.orig
+│                   ├── lh.pial
+│                   ├── lh.sphere
+│                   ├── lh.sphere.reg
+│                   ├── lh.white
+│                   ├── rh.curv
+│                   ├── rh.inflated
+│                   ├── rh.orig
+│                   ├── rh.pial
+│                   ├── rh.sphere
+│                   ├── rh.sphere.reg
+│                   └── rh.white
+├── participants.json
+├── participants.tsv
+├── README
+├── sub-01
+│   ├── anat
+│   │   ├── sub-01_T1w.json
+│   │   └── sub-01_T1w.nii.gz
+│   ├── meg
+│   │   ├── sub-01_acq-calibration_meg.dat
+│   │   ├── sub-01_acq-crosstalk_meg.fif
+│   │   ├── sub-01_coordsystem.json
+│   │   ├── sub-01_task-funloc_channels.tsv
+│   │   ├── sub-01_task-funloc_events.json
+│   │   ├── sub-01_task-funloc_events.tsv
+│   │   ├── sub-01_task-funloc_meg.fif
+│   │   └── sub-01_task-funloc_meg.json
+│   └── sub-01_scans.tsv
+├── sub-02
+│   ├── anat
+│   │   ├── sub-02_T1w.json
+│   │   └── sub-02_T1w.nii.gz
+│   ├── meg
+│   │   ├── sub-02_acq-calibration_meg.dat
+│   │   ├── sub-02_acq-crosstalk_meg.fif
+│   │   ├── sub-02_coordsystem.json
+│   │   ├── sub-02_task-funloc_channels.tsv
+│   │   ├── sub-02_task-funloc_events.json
+│   │   ├── sub-02_task-funloc_events.tsv
+│   │   ├── sub-02_task-funloc_meg.fif
+│   │   └── sub-02_task-funloc_meg.json
+│   └── sub-02_scans.tsv
+├── sub-emptyroom
+│   ├── ses-20120907
+│   │   ├── meg
+│   │   │   ├── sub-emptyroom_ses-20120907_task-noise_channels.tsv
+│   │   │   ├── sub-emptyroom_ses-20120907_task-noise_meg.fif
+│   │   │   └── sub-emptyroom_ses-20120907_task-noise_meg.json
+│   │   └── sub-emptyroom_ses-20120907_scans.tsv
+│   └── ses-20120911
+│       ├── meg
+│       │   ├── sub-emptyroom_ses-20120911_task-noise_channels.tsv
+│       │   ├── sub-emptyroom_ses-20120911_task-noise_meg.fif
+│       │   └── sub-emptyroom_ses-20120911_task-noise_meg.json
+│       └── sub-emptyroom_ses-20120911_scans.tsv
+└── tree.txt
+
+25 directories, 81 files
