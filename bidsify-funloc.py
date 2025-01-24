@@ -98,6 +98,6 @@ for subj_num in (1, 2):
     write_meg_crosstalk(cal_dir / "ct_sparse.fif", bids_path=anat_bids_path)
 
 
-with tarfile.open(root / "funloc.tar.gz", "w:gz") as tar:
+with tarfile.open(root / "MNE-funloc-data.tar.gz", "w:gz") as tar:
     for name in bids_root.iterdir():
-        tar.add(name)
+        tar.add(name, arcname=Path("MNE-funloc-data") / name.relative_to(bids_root))
