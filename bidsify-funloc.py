@@ -4,6 +4,7 @@ import tarfile
 from pathlib import Path
 from warnings import filterwarnings
 
+import numpy as np
 import mne
 from mne_bids import (
     BIDSPath,
@@ -58,6 +59,12 @@ for subj_num in (1, 2):
         "visual/standard": 12,
         "visual/deviant": 16,
     }
+    # adjust for known delay in trigger timing
+    t_adjust = -4.0e-3  # triggers known to have 4ms delay
+    s_adjust = np.rint(t_adjust * raw.info["sfreq"]).astype(int)
+    events[:, 0] += s_adjust
+    assert np.all(events[:, 0] > 0)
+
     # write MEG
     bids_path.update(subject=f"{subj_num:02}", task="funloc")
     write_raw_bids(
