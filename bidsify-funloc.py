@@ -54,8 +54,8 @@ for subj_num in (1, 2):
     events, *_ = extract_expyfun_events(raw_file)
     event_id = {
         "auditory/standard": 10,
-        "auditory/deviant": 12,
-        "visual/standard": 14,
+        "auditory/deviant": 14,
+        "visual/standard": 12,
         "visual/deviant": 16,
     }
     # write MEG
