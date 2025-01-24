@@ -43,9 +43,13 @@ for subj_num in (1, 2):
     raw = mne.io.read_raw_fif(raw_file, **read_raw_kw)
     erm = mne.io.read_raw_fif(erm_file, **read_raw_kw)
     # bad channels
+    mf_prebad = ["MEG0743", "MEG1442"]
+    if subj_num == 1:
+        mf_prebad.extend(["MEG0422", "MEG0743", "MEG2011", "MEG2532"])
+    raw.info["bads"] = mf_prebad
     bads_file = meg_dir / subj / "bads" / f"bad_ch_{subj}_post-sss.txt"
     if bads := bads_file.read_text():
-        raw.info["bads"] = bads.split("\n")
+        raw.info["bads"].extend(bads.split("\n"))
     # events
     events, *_ = extract_expyfun_events(raw_file)
     event_id = {
