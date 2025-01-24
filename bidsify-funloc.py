@@ -8,6 +8,7 @@ import mne
 from mne_bids import (
     BIDSPath,
     get_anat_landmarks,
+    make_dataset_description,
     write_anat,
     write_meg_calibration,
     write_meg_crosstalk,
@@ -97,6 +98,13 @@ for subj_num in (1, 2):
     write_meg_calibration(cal_dir / "sss_cal.dat", bids_path=anat_bids_path)
     write_meg_crosstalk(cal_dir / "ct_sparse.fif", bids_path=anat_bids_path)
 
+
+make_dataset_description(
+    path=bids_root,
+    name="MNE funloc data",
+    authors=["Eric Larson", "Ross Maddox", "Daniel McCloy"],
+    overwrite=True,
+)
 
 with tarfile.open(root / "MNE-funloc-data.tar.gz", "w:gz") as tar:
     for name in bids_root.iterdir():
