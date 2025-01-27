@@ -76,7 +76,7 @@ for subj_num in (1, 2):
         overwrite=True,
     )
     # extract MRI to derivs tree
-    fs_subject = f"sub{subj_num:02}"
+    fs_subject = f"sub-{subj_num:02}"
     mri_name = f"AKCLEE_{107 if subj_num == 1 else 110}_slim"
     mri_archive = root / "mri" / f"{mri_name}.tar.gz"
     tar = tarfile.open(mri_archive)
@@ -87,7 +87,7 @@ for subj_num in (1, 2):
     for item in container.iterdir():
         item.replace(derivs_subj_dir / fs_subject / item.relative_to(container))
     container.rmdir()
-    # rename "AKCLEE_NNN_slim" → "subNN"
+    # rename "AKCLEE_NNN_slim" → "sub-NN"
     for dirpath, dirnames, filenames in (derivs_subj_dir / fs_subject).walk():
         for fname in filenames:
             if mri_name in fname:
