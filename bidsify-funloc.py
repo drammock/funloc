@@ -2,6 +2,7 @@
 
 import tarfile
 from pathlib import Path
+from shutil import copyfile
 from warnings import filterwarnings
 
 import numpy as np
@@ -93,6 +94,13 @@ for subj_num in (1, 2):
             if mri_name in fname:
                 new_fname = fname.replace(mri_name, fs_subject)
                 (dirpath / fname).replace(dirpath / new_fname)
+    # copy BEMs
+    for bem in (root / "bem" / fs_subject).iterdir():
+        copyfile(bem, derivs_subj_dir / fs_subject / "bem" / bem.name)
+    # remove the source spaces. Their filenames have an extra dash in "oct-6" so the
+    # pipeline will recompute them anyway, and also they have the old AKCLEE_* subject
+    # name embedded in them
+    (derivs_subj_dir / fs_subject / "bem" / f"{fs_subject}-oct-6-src.fif").unlink()
     # write anat
     t1_fname = derivs_subj_dir / fs_subject / "mri" / "T1.mgz"
     trans = mne.read_trans(meg_dir / subj / "trans" / f"{subj}-trans.fif")
